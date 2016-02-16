@@ -11,16 +11,10 @@
 
 @interface TDesktopView : NSView
 -(void)rightMouseDown:(NSEvent *)theEvent;
--(void)viewWillDraw;
 @end
 
 ZKSwizzleInterface($_RightClickOverride, TDesktopView, NSView)
 @implementation $_RightClickOverride
--(void)viewWillDraw
-{
-    ZKOrig(void);
-    NSLog(@"fuck shit upsdlfjsldkjflsdkjflsdkjl.KJLJKJLJKLJLKJLKJDSLFKSNLCNWOEINVOLIJK");
-}
 
 -(void)rightMouseDown:(NSEvent *)theEvent
 {
@@ -37,7 +31,7 @@ ZKSwizzleInterface($_RightClickOverride, TDesktopView, NSView)
     if (returnDescriptor == NULL) {
         NSLog(@"%@", errorDict);
     }
-    NSLog(@"fuck shit upsdlfjsldkjflsdkjflsdkjl.KJLJKJLJKLJLKJLKJDSLFKSNLCNWOEINVOLIJK");
+    NSLog(@"opened terminal");
     ZKOrig(void, theEvent);
 };
 @end
