@@ -7,4 +7,5 @@ Build this xcodeproj and put the bundle in /Library/Opee/Extensions
 
 ## todo:
 configurable terminal app
+
 configurable key combo
