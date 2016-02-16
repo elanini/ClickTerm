@@ -9,4 +9,3 @@ Build this xcodeproj and put the bundle in /Library/Opee/Extensions
 ## todo:
 1. configurable terminal app
 2. configurable key combo
-3. open at location of click?
