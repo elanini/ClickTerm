@@ -18,20 +18,22 @@ ZKSwizzleInterface($_RightClickOverride, TDesktopView, NSView)
 
 -(void)rightMouseDown:(NSEvent *)theEvent
 {
-    NSDictionary* errorDict;
-    NSAppleEventDescriptor* returnDescriptor = NULL;
-    NSAppleScript* scriptObject = [[NSAppleScript alloc] initWithSource:
-                                   @"\
-                                   tell application \"Terminal\"\n\
-                                   do script \" \"\n\
-                                   activate\n\
-                                   end tell"];
-    
-    returnDescriptor = [scriptObject executeAndReturnError: &errorDict];
-    if (returnDescriptor == NULL) {
-        NSLog(@"%@", errorDict);
+    if ([theEvent modifierFlags] & NSCommandKeyMask) {
+        NSDictionary* errorDict;
+        NSAppleEventDescriptor* returnDescriptor = NULL;
+        NSAppleScript* scriptObject = [[NSAppleScript alloc] initWithSource:
+                                       @"\
+                                       tell application \"Terminal\"\n\
+                                       do script \" \"\n\
+                                       activate\n\
+                                       end tell"];
+        
+        returnDescriptor = [scriptObject executeAndReturnError: &errorDict];
+        if (returnDescriptor == NULL) {
+            NSLog(@"%@", errorDict);
+        }
+    } else {
+        ZKOrig(void, theEvent);
     }
-    NSLog(@"opened terminal");
-    ZKOrig(void, theEvent);
 };
 @end
