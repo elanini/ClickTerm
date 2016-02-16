@@ -22,11 +22,12 @@ ZKSwizzleInterface($_RightClickOverride, TDesktopView, NSView)
         NSDictionary* errorDict;
         NSAppleEventDescriptor* returnDescriptor = NULL;
         NSAppleScript* scriptObject = [[NSAppleScript alloc] initWithSource:
-                                       @"\
+                                       [NSString stringWithFormat:@"\
                                        tell application \"Terminal\"\n\
-                                       do script \" \"\n\
+                                       set newTab to do script\n\
+                                       set the origin of front window to {%f, %f}\n\
                                        activate\n\
-                                       end tell"];
+                                       end tell", theEvent.locationInWindow.x, theEvent.locationInWindow.y]];
         
         returnDescriptor = [scriptObject executeAndReturnError: &errorDict];
         if (returnDescriptor == NULL) {
