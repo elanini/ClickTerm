@@ -6,9 +6,17 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		077F7C871C72EA67000236EC /* Opee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077F7C861C72EA67000236EC /* Opee.framework */; };
+		077F7C891C72ED31000236EC /* ClickTerm.m in Sources */ = {isa = PBXBuildFile; fileRef = 077F7C881C72ED31000236EC /* ClickTerm.m */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		077F7C7D1C72EA0F000236EC /* ClickTerm.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClickTerm.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		077F7C801C72EA0F000236EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		077F7C861C72EA67000236EC /* Opee.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Opee.framework; path = ../../../Library/Frameworks/Opee.framework; sourceTree = "<group>"; };
+		077F7C881C72ED31000236EC /* ClickTerm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickTerm.m; sourceTree = "<group>"; };
+		077F7C8A1C72ED3D000236EC /* ClickTerm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickTerm.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -16,6 +24,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077F7C871C72EA67000236EC /* Opee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -25,6 +34,7 @@
 		077F7C741C72EA0F000236EC = {
 			isa = PBXGroup;
 			children = (
+				077F7C861C72EA67000236EC /* Opee.framework */,
 				077F7C7F1C72EA0F000236EC /* ClickTerm */,
 				077F7C7E1C72EA0F000236EC /* Products */,
 			);
@@ -42,6 +52,8 @@
 			isa = PBXGroup;
 			children = (
 				077F7C801C72EA0F000236EC /* Info.plist */,
+				077F7C881C72ED31000236EC /* ClickTerm.m */,
+				077F7C8A1C72ED3D000236EC /* ClickTerm.h */,
 			);
 			path = ClickTerm;
 			sourceTree = "<group>";
@@ -112,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077F7C891C72ED31000236EC /* ClickTerm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,9 +213,14 @@
 		077F7C841C72EA0F000236EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = ClickTerm/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Opee/Extensions";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elanini.ClickTerm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -213,9 +231,14 @@
 		077F7C851C72EA0F000236EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = ClickTerm/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Opee/Extensions";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elanini.ClickTerm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
